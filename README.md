@@ -31,7 +31,7 @@ Technologies Used:
 Installation Instructions:
 
 1.Clone the repository:
-git clone https://github.com/yourusername/ai-resume-ranker.git
+git clone https://github.com/Vishakha-33/AI-Powered-Resume-Ranker.git
 cd ai-resume-ranker
 
 2.Install the required dependencies:
