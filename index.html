@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Resume Ranker</title>
+</head>
+
+<body>
+    <center>
+        <h1>Resume Ranker</h1>
+    </center>
+
+    <form action="/" method="post" enctype="multipart/form-data">
+        <label for="job_description">Job Description:</label>
+        <textarea name="job_description" rows="4" cols="50" required></textarea>
+        <br>
+        <label for="resume_files">Upload Resumes (PDF):</label>
+        <input type="file" name="resume_files" accept=".pdf" multiple required>
+        <br>
+        <input type="submit" value="Analyze Resumes">
+    </form>
+    <br>
+    {% if results %}
+    <h2>Ranked Resumes:</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Similarity Score</th>
+        </tr>
+        {% for resume in results %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ resume.name }}</td>
+            <td>{{ resume.email }}</td>
+            <td>{{ resume.similarity }}</td> <!-- This now shows the raw score -->
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+
+</html>
